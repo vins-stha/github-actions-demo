@@ -53,12 +53,8 @@ jobs:
   task2:
     runs-on: ubuntu-latest
     steps:
-      - name: project copy
-        uses: actions/checkout@v3  
+      - name: just  checking
+        run: echo just checking
+
+
       
-      - name: node installation with cache
-        uses: actions/setup-node@v3
-        with:
-          node-version: '17.x'
-      
-        
