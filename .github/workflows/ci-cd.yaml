@@ -27,24 +27,8 @@ jobs:
     runs-on: ubuntu-latest # or docker image name
     steps:
       - name: A bash command
-        run: echo "hello "
+        run: echo Hello from cicd file
 
       - name : install python
         run: apt-get install python3
-  # jobs2 runs parallely with demo
-  job2:
-    runs-on: macos
-    steps:
-      - name: new job for macs
-        run: echo "echo from macos"
-
-  jobs3:
-    # requires demo to be completed to continue this job
-    needs:
-      - demo
-    runs-on: ubuntu
-    steps:
-      - name: Third job dpends on job demo
-        
-        if: startsWith('Fasttract', 'fast')
-        run: echo condition fullfilled
+ 
