@@ -2,10 +2,8 @@ name: Demo CICD
 
 on: 
   push:
-    branches: 
-      - master
-      - dev
-
+    branches: [master, dev] 
+    
     # what kind of files to look for changes  
     paths:
       - '*.ts'
