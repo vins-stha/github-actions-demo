@@ -17,7 +17,10 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # The
+    #
+    #
+    #type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -42,9 +45,26 @@ jobs:
     steps:
       - name: Hello
         run: echo Hello world from second job
+        #run: echo ${{}}
 
 
-
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: node installation
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Install-test-lint-build
+        run: npm install
+      - name: linting
+        run:  npm lint
+      - name: testing
+        run:  npm test
+      - name: building
+        run: npm run build --production
 
 
 
