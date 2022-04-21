@@ -44,17 +44,10 @@ jobs:
     needs: [build]
     steps:
       - name: Hello ubuntu with cache
-        uses: actions/cache@v3
-        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        #uses: actions/cache@v3
+        #key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
         run: echo Hello world from second job
         #run: echo ${{}}
   
-  task2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: just  checking
-        run: echo just checking
-
-
-      
+  
