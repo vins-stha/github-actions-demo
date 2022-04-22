@@ -2,20 +2,16 @@ name: Demo CICD
 
 on: 
   push:
-    branches: 
-      - master
-      - dev
+    branches: [dev, master]
+
+    pull_request:
+      branches: [dev, master]
 
     # what kind of files to look for changes  
     paths:
       - '*.ts'
       - '*.js'
       - '!test.js' # ignore change in this file
-  
-  pull_request:
-    branches: [master,dev]
-    branches-gnore:
-      - test-branch 
 
 env:
   PROJECT: "Github actions demo"
@@ -23,8 +19,12 @@ env:
   TOPIC: CI/CD
 
 jobs:
-  demo:
+  job1:
     runs-on: ubuntu-latest # or docker image name
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    
     steps:
       - name: A bash command
         run: echo Hello from cicd file
