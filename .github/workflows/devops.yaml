@@ -1,4 +1,4 @@
-name: Demo CICD
+name: renamed CICD
 
 on: 
   push:
@@ -10,7 +10,7 @@ on:
       
   
 jobs:
-  build_Ubuntu:
+  build:
     runs-on: ubuntu-latest # or docker image name
   
     strategy:
