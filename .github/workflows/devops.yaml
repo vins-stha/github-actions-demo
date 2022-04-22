@@ -10,8 +10,9 @@ on:
       
   
 jobs:
-  runs-on: ubuntu-latest # or docker image name
-  job1:
+  build_Ubuntu:
+    runs-on: ubuntu-latest # or docker image name
+  
     strategy:
       matrix:
         node-version: [ 16.x ]
