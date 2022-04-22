@@ -47,7 +47,7 @@ jobs:
         env:
           COMMIT_FILTER: "skip"
         run: |
-          readonly local last_commit_log=$(git log -1 --pretty=format:%"%s")
+          readonly local last_commit_log=$(git log -1 --pretty=format:"%s")
           echo "last commit messga: $last_commit_log"
 
   demo:
