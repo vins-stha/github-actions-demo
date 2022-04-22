@@ -42,7 +42,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: notify
-        run: echo checkout cmpleted 
+        run: echo checkout cmpleted
+      - name: checking git comment
+        env:
+          COMMIT_FILTER: "skip"
+        run: |
+          readonly local last_commit_log=$(git log -1 --pretty=format:%"%s")
+          echo "last commit messga: $last_commit_log"
 
   demo:
     runs-on: ubuntu-latest
@@ -80,7 +86,7 @@ jobs:
         image: vinsstha/fs9-frontend:V1
         ports: 
           - '3000:3000'
-      if: env.GITHUB_REF_NAME == 'dev'
+            ##if: env.GITHUB_REF_NAME == 'dev'
       postgresql:
         image: postgres:14.2
         ports:
