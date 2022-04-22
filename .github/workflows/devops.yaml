@@ -7,19 +7,19 @@ on:
     pull_request:
       branches: [dev, master]
 
-    # what kind of files to look for changes  
+      
   
-  jobs:
-    runs-on: ubuntu-latest # or docker image name
-    job1:
-      strategy:
-        matrix:
-          node-version: [ 16.x ]
+jobs:
+  runs-on: ubuntu-latest # or docker image name
+  job1:
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
     
-      steps:
-        - name: A bash command
-          run: echo Hello from cicd file
+    steps:
+      - name: A bash command
+        run: echo Hello from cicd file
 
-        - name : install python
-          run: apt-get install python3
+      - name : install python
+        run: apt-get install python3
  
