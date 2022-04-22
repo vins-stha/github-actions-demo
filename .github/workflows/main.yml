@@ -52,12 +52,12 @@ jobs:
           
           readonly local count=$(echo last_commit_log | grep -c "$COMMIT_FILTER")
 
-        if [[ "$count" -eq 0 ]]; then
-          echo "No SKIP found"
-        else
-          echo "SKIPPING"
-          exit 78
-        fi
+          if [[ "$count" -eq 0 ]]; then
+            echo "No SKIP found"
+          else
+            echo "SKIPPING"
+            exit 78
+          fi
 
   demo:
     runs-on: ubuntu-latest
