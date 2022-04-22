@@ -50,6 +50,7 @@ jobs:
           readonly local last_commit_log=$(git log -1 --pretty=format:"%s")
           echo "last commit messga: $last_commit_log"
           
+          echo "searching for word $COMMIT_FILTER"
           readonly local count=$(echo last_commit_log | grep -c "$COMMIT_FILTER")
 
           if [[ "$count" -eq 0 ]]; then
