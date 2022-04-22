@@ -8,27 +8,18 @@ on:
       branches: [dev, master]
 
     # what kind of files to look for changes  
-    paths:
-      - '*.ts'
-      - '*.js'
-      - '!test.js' # ignore change in this file
-
-env:
-  PROJECT: "Github actions demo"
-  COURSE: fs9
-  TOPIC: CI/CD
-
-jobs:
-  job1:
+  
+  jobs:
     runs-on: ubuntu-latest # or docker image name
-    strategy:
-      matrix:
-        node-version: [ 16.x ]
+    job1:
+      strategy:
+        matrix:
+          node-version: [ 16.x ]
     
-    steps:
-      - name: A bash command
-        run: echo Hello from cicd file
+      steps:
+        - name: A bash command
+          run: echo Hello from cicd file
 
-      - name : install python
-        run: apt-get install python3
+        - name : install python
+          run: apt-get install python3
  
