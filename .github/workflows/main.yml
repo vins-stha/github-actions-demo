@@ -50,9 +50,9 @@ jobs:
           readonly local last_commit_log=$(git log -1 --pretty=format:"%s")
           echo "last commit messga: $last_commit_log"
           
-          readonly local count_message=$(echo last_commit_log | grep -c "$COMMIT_FILTER")
+          readonly local count=$(echo last_commit_log | grep -c "$COMMIT_FILTER")
 
-        if [[ "$count_message" -eq 0 ]];then
+        if [[ "$count" -eq 0 ]]; then
           echo "No SKIP found"
         else
           echo "SKIPPING"
