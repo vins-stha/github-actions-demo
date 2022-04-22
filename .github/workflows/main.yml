@@ -55,7 +55,7 @@ jobs:
           if [[ "$count" -eq 0 ]]; then
             echo "No SKIP found"
           else
-            echo "SKIPPING"
+            echo "SKIP COUNT = $count soo...SKIPPING"
             exit 78
           fi
 
