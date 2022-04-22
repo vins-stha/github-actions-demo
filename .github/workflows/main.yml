@@ -68,4 +68,19 @@ jobs:
         uses: supercharge/mongodb-github-action@1.7.0
         with:
           mongodb-version: '4.2'
+        if: env.GITHUB_REF_NAME == 'dev' 
   
+  postgresjobs:
+    runs-on: ubuntu-latest
+    services:
+      postgresql:
+        image: postgres:14.x
+        ports:
+          - "5433:5432"
+        env:
+          POSTGRES_USER: 'admin123'
+          POSTGRES_DB: 'demoDb'
+          POSTGRES_PASSWORD: 'password' 
+
+
+
