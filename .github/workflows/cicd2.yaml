@@ -41,7 +41,7 @@ jobs:
         run: npm install
 
       - name: install lint
-        run: npm install eslint
+        run:  echo lintingggg
 
       - name: linting
         run: npm run lint
