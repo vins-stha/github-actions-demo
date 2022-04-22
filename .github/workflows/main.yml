@@ -57,5 +57,15 @@ jobs:
 
         run: echo Hello world from second job ${{ matrix.variable }}
         #run: echo ${{}}
-  
+  devjobs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: hello test
+        run: echo HELLO FROM MACOS
+
+      - name: starting mongodb
+        uses: supercharge/mongodb-github-action@1.7.0
+        with:
+          mongodb-version: '4.2'
   
