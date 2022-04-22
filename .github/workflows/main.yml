@@ -52,7 +52,7 @@ jobs:
           
           readonly local count_message=$(echo last_commit_log | grep -c "$COMMIT_FILTER")
 
-        if [[$count_message -eq 0 ]];then
+        if [[ "$count_message" -eq 0 ]];then
           echo "No SKIP found"
         else
           echo "SKIPPING"
