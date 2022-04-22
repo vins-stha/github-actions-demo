@@ -72,6 +72,9 @@ jobs:
   
   postgresjobs:
     runs-on: ubuntu-latest
+    steps:
+      - name: testing123
+        run: echo Testing to build post gres
     services:
       postgresql:
         image: postgres:14.x
