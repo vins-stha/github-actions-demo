@@ -22,17 +22,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo "${{ env.NAME }}"
-
-      # Runs a set of commands using the runners shell
+      - name: set up node
+        uses: actions/setup-node@v3
       
-      - name: checkout
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checking out
         uses: actions/checkout@v3
+       
+      - name: Caching
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hasFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: instal node
         run: npm install
@@ -41,7 +44,7 @@ jobs:
         run:  echo lintingggg
 
       - name: linting
-        run: npm run lint
+        run: echo "skiping npm run lint"
 
       - name: testing
         run: npm test
