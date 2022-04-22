@@ -40,6 +40,9 @@ jobs:
       - name: instal node
         run: npm install
 
+      - name: install lint
+        run: npm install eslint
+
       - name: linting
         run: npm run lint
 
