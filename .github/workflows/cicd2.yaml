@@ -43,8 +43,8 @@ jobs:
       - name: install lint
         run:  echo lintingggg
 
-      - name: installing test
-        run: npm install --save-dev @testing-library/jest-dom
+        #- name: installing test
+        #run: npm install --save-dev @testing-library/jest-dom
 
 
       - name: testing
