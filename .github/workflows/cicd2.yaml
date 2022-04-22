@@ -37,14 +37,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: instal node
-        run: npm install
+      - name: clean install node
+        run: npm ci
 
       - name: install lint
         run:  echo lintingggg
 
-      - name: linting
-        run: echo "skiping npm run lint"
+      - name: installing test
+        run: npm install --save-dev @testing-library/jest-dom
+
 
       - name: testing
         run: npm test
