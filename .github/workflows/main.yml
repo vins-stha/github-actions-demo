@@ -76,6 +76,10 @@ jobs:
       - name: testing123
         run: echo Testing to build post gres
     services:
+      frontend:
+        image: vinsstha/fs9-frontend:V1
+        ports: 
+          - '3000:3000'
       postgresql:
         image: postgres:14.2
         ports:
@@ -83,7 +87,8 @@ jobs:
         env:
           POSTGRES_USER: 'admin123'
           POSTGRES_DB: 'demoDb'
-          POSTGRES_PASSWORD: 'password' 
+          POSTGRES_PASSWORD: 'password'
+    
 
 
 
