@@ -80,7 +80,7 @@ jobs:
         image: vinsstha/fs9-frontend:V1
         ports: 
           - '3000:3000'
-        if: env.GITHUB_REF_NAME == 'dev'
+      if: env.GITHUB_REF_NAME == 'dev'
       postgresql:
         image: postgres:14.2
         ports:
