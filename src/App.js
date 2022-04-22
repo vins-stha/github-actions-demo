@@ -11,10 +11,11 @@ function App() {
     const [curCatImgs, setCurCatImgs] = useState([]);
     const [curImg, setCurImg] = useState();
     const [flip, setFlip] = useState(false);
-
+	
     const [rotation, setRotation] = useState(0);
     const baseurl = "http://localhost:5000";
-
+	
+	console.log("testing github actions")
     useEffect(() => {
         async function fetchData() {
             try {
