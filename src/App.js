@@ -15,7 +15,6 @@ function App() {
     const [rotation, setRotation] = useState(0);
     const baseurl = "http://localhost:5000";
 	
-	console.log("testing github actions")
     useEffect(() => {
         async function fetchData() {
             try {
