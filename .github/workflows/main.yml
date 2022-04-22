@@ -9,7 +9,8 @@ on:
     branches: [ dev, origin, main ]
   pull_request:
     branches: [ dev, origin ]
-  paths: ['*.js*']
+  paths: 
+    - '*.js*'
 
 env:
   NAME: "Testing Github Actions"
