@@ -6,11 +6,11 @@ import {ImageCarousel} from "./components/Carousel";
 function App() {
 
     const [data, setData] = useState([]);
-    const [curCat, setCurCat] = useState();
+    const [setCurCat] = useState();
     const [curCatName, setCurCatName] = useState();
     const [curCatImgs, setCurCatImgs] = useState([]);
     const [curImg, setCurImg] = useState();
-    const [flip, setFlip] = useState(false);
+    const [setFlip] = useState(false);
 	
     const [rotation, setRotation] = useState(0);
     const baseurl = "http://localhost:5000";
