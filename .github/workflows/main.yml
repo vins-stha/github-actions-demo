@@ -7,8 +7,6 @@ on:
   
   push:
     branches: [ dev, origin, main ]
-    paths:
-      - '*.js*'
   pull_request:
     branches: [ dev, origin ]
   
@@ -49,12 +47,15 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     needs: [build]
+    strategy:
+      matrix:
+        variable: [1,2,3]
     steps:
       - name: Hello ubuntu with cache
         #uses: actions/cache@v3
         #key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
-        run: echo Hello world from second job
+        run: echo Hello world from second job ${{ matrix.variable }}
         #run: echo ${{}}
   
   
