@@ -38,7 +38,7 @@ jobs:
           echo test, and deploy your project.
       
       - name: python installation
-        run: apt-get install python
+        run: sudo apt install python3
 
       - name: checkout
         uses: actions/checkout@v3
