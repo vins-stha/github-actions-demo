@@ -39,7 +39,7 @@ function App() {
     },[setCurCat]);
 	console.log('cur cat', curCat)
     const getNextCat = () => {
-        if (flip == true) 
+        if (flip === true || flip === "true") 
 	    setFlip(false)
 
         setRotation(0);
