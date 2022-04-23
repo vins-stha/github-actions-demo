@@ -6,7 +6,7 @@ import {ImageCarousel} from "./components/Carousel";
 function App() {
 
     const [data, setData] = useState([]);
-    const [curCat,setCurCat] = useState([]);
+    const [curCat, setCurCat] = useState([]);
     const [curCatName, setCurCatName] = useState();
     const [curCatImgs, setCurCatImgs] = useState([]);
     const [curImg, setCurImg] = useState();
@@ -37,9 +37,11 @@ function App() {
         fetchData();
 
     },[setCurCat]);
-
+	console.log('cur cat', curCat)
     const getNextCat = () => {
-        setFlip(false);
+        if (flip == true) 
+	    setFlip(false)
+
         setRotation(0);
         let currentIndex = data.indexOf(data.find(dat => dat.name === curCatName))
         let nextIndex = currentIndex + 1;
