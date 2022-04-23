@@ -6,7 +6,7 @@ import {ImageCarousel} from "./components/Carousel";
 function App() {
 
     const [data, setData] = useState([]);
-    const [setCurCat] = useState();
+    const [curCat, setCurCat] = useState([]);
     const [curCatName, setCurCatName] = useState();
     const [curCatImgs, setCurCatImgs] = useState([]);
     const [curImg, setCurImg] = useState();
@@ -36,7 +36,7 @@ function App() {
 
         fetchData();
 
-    });
+    },[curCat]);
 
     const getNextCat = () => {
         setFlip(false);
