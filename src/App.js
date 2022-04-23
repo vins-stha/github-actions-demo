@@ -36,7 +36,7 @@ function App() {
 
         fetchData();
 
-    },[curCat]);
+    },[]);
 
     const getNextCat = () => {
         setFlip(false);
